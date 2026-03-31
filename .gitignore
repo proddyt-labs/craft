@@ -1,8 +1,0 @@
-.gemini/
-.agents/
-.agent/
-_agents/
-_agent/
-node_modules/
-.DS_Store
-*.tmp
