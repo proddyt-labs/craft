@@ -32,6 +32,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 60px 20px;
+    flex: 1 0 auto;
 }
 
 .hub-header {
@@ -97,6 +98,7 @@ body {
     margin: 0 auto;
     padding: 80px 20px;
     animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    flex: 1 0 auto;
 }
 
 .back-header {
@@ -176,16 +178,28 @@ body {
 .hub-footer {
     text-align: center;
     color: var(--text-secondary);
-    font-size: 0.8rem;
-    padding: 15px;
-    background-color: var(--card-bg);
-    border: 0.1px solid var(--card-border);
-    margin: 0 auto;
-    flex: 1;
+    font-size: 0.9rem;
+    padding: 30px 20px;
+    background-color: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid var(--card-border);
+    margin-top: auto;
     width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    flex-shrink: 0;
+    transition: var(--transition-smooth);
+}
+
+.hub-footer a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+    border-bottom: 1px solid transparent;
+}
+
+.hub-footer a:hover {
+    color: white;
+    border-bottom-color: var(--text-primary);
 }
 
 
