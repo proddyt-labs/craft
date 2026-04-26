@@ -159,6 +159,10 @@ body {
     display: block;
 }
 
+.landing-card-link {
+    height: 100%;
+}
+
 .landing-card {
     background: var(--lc-bg);
     border: 1px solid var(--lc-border, rgba(255,255,255,0.08));
@@ -169,7 +173,7 @@ body {
     gap: 10px;
     transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     cursor: pointer;
-    min-height: 180px;
+    height: 100%;
 }
 
 .landing-card:hover {
