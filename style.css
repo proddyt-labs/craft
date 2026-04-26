@@ -52,6 +52,11 @@ body {
 .craft-nav .nav-back:hover {
     color: var(--cr-primary);
 }
+.craft-nav .nav-back .hub-mark {
+    font-family: 'JetBrains Mono', monospace;
+    color: #1F6FEB;
+    font-weight: 500;
+}
 .craft-nav .nav-brand {
     display: flex;
     align-items: center;
