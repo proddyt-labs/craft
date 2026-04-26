@@ -1,9 +1,16 @@
 :root {
-    --bg-color: #020617;
-    --card-bg: rgba(30, 41, 59, 0.5);
-    --card-border: rgba(255, 255, 255, 0.1);
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
+    /* craft brand */
+    --cr-primary: #4ADE80;
+    --cr-mid:     #22C55E;
+    --cr-dark:    #15803D;
+    --cr-bg:      #0B1A0F;
+    --cr-muted:   #5A8A65;
+
+    --bg-color: var(--cr-bg);
+    --card-bg: rgba(20, 38, 27, 0.5);
+    --card-border: rgba(74, 222, 128, 0.12);
+    --text-primary: #E8F5EC;
+    --text-secondary: var(--cr-muted);
     --accent-php: #777BB4;
     --accent-java: #EA2D2E;
     --accent-csharp: #68217A;
@@ -26,6 +33,37 @@ body {
 
     display: flex;
     flex-direction: column;
+}
+
+.craft-nav {
+    border-bottom: 1px solid rgba(74, 222, 128, 0.08);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+}
+.craft-nav .nav-back {
+    color: var(--cr-muted);
+    text-decoration: none;
+    transition: color 0.15s;
+}
+.craft-nav .nav-back:hover {
+    color: var(--cr-primary);
+}
+.craft-nav .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.craft-nav .nav-mark {
+    color: var(--cr-primary);
+    font-weight: 500;
+}
+.craft-nav .nav-name {
+    color: var(--text-primary);
+    font-weight: 500;
 }
 
 .hub-wrapper {
