@@ -140,16 +140,17 @@ body {
 }
 
 /* ── Landing Cards (index bloco 1) ── */
-.hub-grid-landings {
+/* especificidade dupla para sobrescrever .hub-grid */
+.hub-grid.hub-grid-landings {
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
 }
 
 @media (max-width: 900px) {
-    .hub-grid-landings { grid-template-columns: repeat(2, 1fr); }
+    .hub-grid.hub-grid-landings { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 500px) {
-    .hub-grid-landings { grid-template-columns: 1fr; }
+    .hub-grid.hub-grid-landings { grid-template-columns: 1fr; }
 }
 
 .landing-card-link {
@@ -159,22 +160,22 @@ body {
 }
 
 .landing-card {
-    background: color-mix(in srgb, var(--lc-bg) 80%, transparent);
-    border: 1px solid color-mix(in srgb, var(--lc-color) 18%, transparent);
+    background: var(--lc-bg);
+    border: 1px solid var(--lc-border, rgba(255,255,255,0.08));
     border-radius: 18px;
     padding: 28px 24px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    transition: all 0.25s ease;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     cursor: pointer;
     min-height: 180px;
 }
 
 .landing-card:hover {
     transform: translateY(-6px);
-    border-color: color-mix(in srgb, var(--lc-color) 45%, transparent);
-    box-shadow: 0 12px 32px -8px color-mix(in srgb, var(--lc-color) 20%, transparent);
+    border-color: var(--lc-color);
+    box-shadow: 0 12px 32px -12px rgba(0,0,0,0.6);
 }
 
 .landing-card-mark {
@@ -478,7 +479,7 @@ body {
     left: 50%;
     width: 150%;
     height: 150%;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, var(--subject-glow, rgba(74,222,128,0.1)) 0%, transparent 70%);
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: var(--transition-smooth);
@@ -487,6 +488,17 @@ body {
 .subject-card:hover .card-glow {
     opacity: 1;
 }
+
+/* cores por matéria */
+.subject-card[data-subject="php"]    { --subject-glow: rgba(119,123,180,0.15); }
+.subject-card[data-subject="java"]   { --subject-glow: rgba(234, 45, 46,0.15); }
+.subject-card[data-subject="csharp"] { --subject-glow: rgba(104, 33,122,0.15); }
+.subject-card[data-subject="apps"]   { --subject-glow: rgba(227, 79, 38,0.15); }
+
+.subject-card[data-subject="php"]:hover    { border-color: rgba(119,123,180,0.35); }
+.subject-card[data-subject="java"]:hover   { border-color: rgba(234, 45, 46,0.35); }
+.subject-card[data-subject="csharp"]:hover { border-color: rgba(104, 33,122,0.35); }
+.subject-card[data-subject="apps"]:hover   { border-color: rgba(227, 79, 38,0.35); }
 
 .subject-logo {
     margin-bottom: 30px;
