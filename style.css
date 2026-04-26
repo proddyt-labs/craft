@@ -121,7 +121,7 @@ body {
 
 /* Hub Sections */
 .hub-section {
-    margin-bottom: 60px;
+    margin-bottom: 56px;
 }
 .hub-section:last-child {
     margin-bottom: 0;
@@ -129,33 +129,169 @@ body {
 
 .section-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 500;
     color: var(--cr-muted);
     text-transform: uppercase;
-    letter-spacing: 0.18em;
-    margin-bottom: 24px;
-    padding-bottom: 12px;
+    letter-spacing: 0.2em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
     border-bottom: 1px solid var(--card-border);
 }
 
-/* Landing card marks (sibling systems) */
-.subject-logo.punch-mark,
-.subject-logo.nexo-mark,
-.subject-logo.vector-mark,
-.subject-logo.wire-mark {
+/* ── Landing Cards (index bloco 1) ── */
+.hub-grid-landings {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 900px) {
+    .hub-grid-landings { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+    .hub-grid-landings { grid-template-columns: 1fr; }
+}
+
+.landing-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.landing-card {
+    background: color-mix(in srgb, var(--lc-bg) 80%, transparent);
+    border: 1px solid color-mix(in srgb, var(--lc-color) 18%, transparent);
+    border-radius: 18px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    min-height: 180px;
+}
+
+.landing-card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--lc-color) 45%, transparent);
+    box-shadow: 0 12px 32px -8px color-mix(in srgb, var(--lc-color) 20%, transparent);
+}
+
+.landing-card-mark {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     font-weight: 600;
-    height: 100px;
+    color: var(--lc-color);
+    line-height: 1;
+}
+
+.landing-card-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-top: 4px;
+}
+
+.landing-card-desc {
+    font-size: 0.82rem;
+    color: #64748b;
+    line-height: 1.5;
+    flex: 1;
+}
+
+.landing-card-cta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--lc-color);
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    margin-top: 4px;
+}
+
+.landing-card:hover .landing-card-cta {
+    opacity: 1;
+}
+
+/* ── Featured Card (index bloco 2) ── */
+.featured-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.featured-card {
+    position: relative;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 36px 40px;
+    overflow: hidden;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.featured-card:hover {
+    border-color: rgba(74, 222, 128, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px -12px rgba(74, 222, 128, 0.12);
+}
+
+.featured-card-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(74, 222, 128, 0.06) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.featured-card-body {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 24px;
 }
-.subject-logo.punch-mark  { color: #22D3EE; }
-.subject-logo.nexo-mark   { color: #A78BFA; }
-.subject-logo.vector-mark { color: #FBB024; }
-.subject-logo.wire-mark   { color: #F472B6; }
+
+.featured-card-marks {
+    display: flex;
+    gap: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    opacity: 0.85;
+}
+
+.featured-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 8px;
+}
+
+.featured-card-desc {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.6;
+    max-width: 560px;
+}
+
+.featured-card-cta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--cr-primary);
+    white-space: nowrap;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    flex-shrink: 0;
+}
+
+.featured-card:hover .featured-card-cta {
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .featured-card-body { flex-direction: column; align-items: flex-start; }
+    .featured-card { padding: 24px; }
+}
 
 /* Hub Grid */
 .hub-grid.force-2x2 {
