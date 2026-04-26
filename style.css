@@ -119,6 +119,44 @@ body {
     font-weight: 400;
 }
 
+/* Hub Sections */
+.hub-section {
+    margin-bottom: 60px;
+}
+.hub-section:last-child {
+    margin-bottom: 0;
+}
+
+.section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--cr-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--card-border);
+}
+
+/* Landing card marks (sibling systems) */
+.subject-logo.punch-mark,
+.subject-logo.nexo-mark,
+.subject-logo.vector-mark,
+.subject-logo.wire-mark {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.4rem;
+    font-weight: 600;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.subject-logo.punch-mark  { color: #22D3EE; }
+.subject-logo.nexo-mark   { color: #A78BFA; }
+.subject-logo.vector-mark { color: #FBB024; }
+.subject-logo.wire-mark   { color: #F472B6; }
+
 /* Hub Grid */
 .hub-grid.force-2x2 {
     grid-template-columns: repeat(2, 1fr);
