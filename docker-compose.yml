@@ -1,0 +1,7 @@
+services:
+  craft:
+    build: .
+    container_name: craft
+    ports:
+      - "8080:80"
+    restart: unless-stopped
